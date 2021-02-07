@@ -1,0 +1,14 @@
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from datetime import date
+import time
+
+from selenium.common.exceptions import TimeoutException
+
+with open("vin.txt", "r") as f:
+    for line in f.readlines():
+        counter_vin += 1
+        vin = line.strip('\n')  # 去掉列表中每一个元素的换行符
+        print(counter_vin, vin)
+        f_out.writelines(str(counter_vin) + ' : ' + vin)
+        f_out.writelines('\n\n\n')
